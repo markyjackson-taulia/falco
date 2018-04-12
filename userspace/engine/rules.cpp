@@ -97,7 +97,7 @@ int falco_rules::add_filter(lua_State *ls)
 	while (lua_next(ls, -3) != 0) {
                 // key is at index -2, value is at index
                 // -1. We want the keys.
-		evttypes.insert(luaL_checknumber(ls, -2));
+		syscalls.insert(luaL_checknumber(ls, -2));
 
 		// Remove value, keep key for next iteration
 		lua_pop(ls, 1);
